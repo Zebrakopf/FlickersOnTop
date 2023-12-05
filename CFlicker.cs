@@ -185,7 +185,9 @@ namespace VisualStimuli
 			{
 				index = 0;
 			}
-			var i = Data[index];
+			///var i = Data[index];
+			double milliseconds = TimeSpan.FromTicks(DateTime.Now.Ticks).TotalSeconds;
+			var i = 0.5 * (1.0d + Math.Sin(2d * Math.PI * Frequency * milliseconds + (Phase / 180d) * Math.PI));
 			var a = (Byte)(Alpha1 * i + Alpha2 * (1 - i));
 			if (isActive)
 			{
